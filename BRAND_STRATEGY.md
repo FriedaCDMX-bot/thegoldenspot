@@ -1,4 +1,4 @@
-# Personal Blog — Brand Strategy
+# Izzy's Busy — Brand Strategy
 
 *Working strategy document. Drafted July 2026.*
 
@@ -71,9 +71,8 @@ demonstrate rigor and responsibility, not just enthusiasm.
 - Near-term: a meaningful, polished project to reference in college applications.
 - Later (revisit in ~1 year): possible platform growth / monetization — not now.
 
-## Name direction (to decide)
+## Name
 
-Working candidates — the blog needs its own identity, distinct from "Weekend Fun":
-
-- **The Golden Spot** (from the author's own words: "that's the golden spot I aim for")
-- Other directions to explore: coastal/Newport imagery, intuitive-eating language.
+**Izzy's Busy** (chosen July 2026; previously launched under the working title
+"The Golden Spot"). "The golden spot" survives as the blog's signature phrase
+for its core philosophy — everyone's unique feel-your-best combination.

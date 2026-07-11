@@ -1,7 +1,8 @@
-# The Golden Spot
+# Izzy's Busy
 
-A personal lifestyle blog centered on nutrition, health, and wellness for young
-girls and women — feel your absolute best, no diet culture required.
+Izzy's Busy — a personal lifestyle blog centered on nutrition, health, and
+wellness for young girls and women. Feel your absolute best, no diet culture
+required.
 
 This is a plain static website (just HTML and CSS, no build step), designed to
 be hosted for free on [Netlify](https://netlify.com).
@@ -51,12 +52,13 @@ Tip: resize photos to ~1600px wide before uploading so pages load fast.
 
 The name appears only as text — nothing structural depends on it:
 
-- **Site text:** find-and-replace "The Golden Spot" across the HTML files
+- **Site text:** find-and-replace "Izzy's Busy" across the HTML files
   (a few minutes, and Claude can do it on request).
 - **Netlify URL:** free to change anytime — Site configuration → Site details →
   Change site name.
-- **GitHub repo name:** free to rename — Settings → General → Rename.
-  GitHub redirects the old name automatically.
+- **GitHub repo name:** free to rename (the repo is still called `thegoldenspot`;
+  renaming it to `izzysbusy` is optional and cosmetic) — Settings → General →
+  Rename. GitHub redirects the old name automatically.
 - **Custom domain:** the only thing that costs money (~$10–20/yr per domain).
   Buying can be deferred until the name feels settled.
 
