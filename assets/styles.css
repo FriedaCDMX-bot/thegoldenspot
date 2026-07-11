@@ -1,0 +1,386 @@
+/* ------------------------------------------------------------------
+   The Golden Spot — site styles
+   Aesthetic: clean, feminine, editorial. Generous whitespace,
+   big serif titles, soft warm palette.
+------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+  --cream: #fdfbf7;
+  --ink: #35302a;
+  --muted: #8f8578;
+  --gold: #b8923e;
+  --gold-soft: #e9dcc3;
+  --blush: #f5ece4;
+  --line: #ece5d8;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Karla', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------- header ---------- */
+
+.site-header {
+  padding: 3.5rem 1.5rem 0;
+  text-align: center;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.brand a:hover { color: var(--gold); }
+
+.tagline {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--muted);
+}
+
+.main-nav {
+  margin-top: 2rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 2.4rem;
+}
+
+.main-nav a {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  transition: color 0.15s ease;
+}
+
+.main-nav a:hover, .main-nav a.active { color: var(--gold); }
+
+/* ---------- layout ---------- */
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.narrow { max-width: 720px; }
+
+/* ---------- hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 4.5rem;
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  max-width: 22ch;
+  margin: 1.2rem auto 0;
+}
+
+.hero h1 a:hover { color: var(--gold); }
+
+.hero .hero-sub {
+  max-width: 52ch;
+  margin: 1.4rem auto 0;
+  color: var(--muted);
+}
+
+/* ---------- section labels ---------- */
+
+.section-label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  margin: 4rem 0 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.section-label::before, .section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ---------- post grid ---------- */
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3rem 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.post-card { text-align: center; }
+
+.post-card-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--blush);
+  margin-bottom: 1.4rem;
+}
+
+.post-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.post-card:hover .post-card-img img { transform: scale(1.03); }
+
+/* elegant placeholder when a post has no photo yet */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--blush) 0%, var(--gold-soft) 100%);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--gold);
+}
+
+.post-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+}
+
+.post-title {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 0.6rem;
+}
+
+.post-title a:hover { color: var(--gold); }
+
+.post-excerpt {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+  max-width: 38ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- pillar band ---------- */
+
+.pillars {
+  background: var(--blush);
+  padding: 4rem 1.5rem;
+  margin-top: 4rem;
+}
+
+.pillar-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.pillar h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.pillar h3 a:hover { color: var(--gold); }
+
+.pillar p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.pillar .pillar-icon {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- article pages ---------- */
+
+.article {
+  padding: 4.5rem 0 3rem;
+}
+
+.article-header { text-align: center; margin-bottom: 3rem; }
+
+.article-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  max-width: 24ch;
+  margin: 1.2rem auto 0;
+}
+
+.article-body h2 {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1rem;
+}
+
+.article-body p + p { margin-top: 1.2rem; }
+
+.article-body ul, .article-body ol { margin: 1.2rem 0 1.2rem 1.4rem; }
+
+.article-body li + li { margin-top: 0.5rem; }
+
+.article-body blockquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--gold);
+  border-left: 2px solid var(--gold-soft);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+.article-body .article-img {
+  margin: 2.5rem 0;
+  background: var(--blush);
+}
+
+.article-body .article-img .img-placeholder { aspect-ratio: 3 / 2; }
+
+.article-body figcaption {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+  padding-top: 0.6rem;
+}
+
+.disclaimer {
+  margin-top: 3rem;
+  padding: 1.2rem 1.5rem;
+  background: var(--blush);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---------- page intro (about, category pages) ---------- */
+
+.page-intro {
+  text-align: center;
+  padding: 4.5rem 1.5rem 1rem;
+}
+
+.page-intro h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 600;
+}
+
+.page-intro p {
+  max-width: 54ch;
+  margin: 1.2rem auto 0;
+  color: var(--muted);
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 5rem;
+  padding: 3rem 1.5rem 3.5rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 2rem;
+  margin: 1.4rem 0;
+}
+
+.footer-nav a {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.footer-nav a:hover { color: var(--gold); }
+
+footer .copyright {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .main-nav { gap: 0.3rem 1.4rem; }
+  .hero { padding: 3.5rem 1.5rem 3rem; }
+}
