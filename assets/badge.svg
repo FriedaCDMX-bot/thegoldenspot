@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+  <circle cx="70" cy="70" r="68" fill="#fffdf8"/>
+  <circle cx="70" cy="70" r="67" fill="none" stroke="#c98d7d" stroke-width="1.5"/>
+  <circle cx="70" cy="70" r="46" fill="none" stroke="#c98d7d" stroke-width="0.75"/>
+  <defs>
+    <path id="tc" d="M 70,70 m -56,0 a 56,56 0 1,1 112,0 a 56,56 0 1,1 -112,0"/>
+  </defs>
+  <text font-family="Georgia, serif" font-size="11.5" letter-spacing="3.4" fill="#b06a56">
+    <textPath href="#tc" startOffset="0%">THE GOLDEN SPOT &#183; EST. 2026 &#183; FEEL YOUR BEST &#183;</textPath>
+  </text>
+  <text x="70" y="66" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="15" fill="#b06a56">the golden</text>
+  <text x="70" y="84" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="15" fill="#b06a56">spot</text>
+</svg>

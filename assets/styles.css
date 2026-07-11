@@ -1,20 +1,22 @@
 /* ------------------------------------------------------------------
    The Golden Spot — site styles
-   Aesthetic: clean, feminine, editorial. Generous whitespace,
-   big serif titles, soft warm palette.
+   Aesthetic: vintage-editorial, feminine, organized. Blush + cream
+   palette, characterful serif display titles, boxed nav, pinstripes.
 ------------------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 :root {
-  --cream: #fdfbf7;
-  --ink: #35302a;
-  --muted: #8f8578;
-  --gold: #b8923e;
-  --gold-soft: #e9dcc3;
-  --blush: #f5ece4;
-  --line: #ece5d8;
-  --serif: 'Cormorant Garamond', Georgia, serif;
+  --cream: #faf6ee;
+  --cream-deep: #f4ecdf;
+  --ink: #43362e;
+  --muted: #94826f;
+  --rose: #c98d7d;
+  --rose-deep: #b06a56;
+  --blush: #f3ddd3;
+  --blush-light: #f8eae2;
+  --line: #e8d9c9;
+  --serif: 'Fraunces', Georgia, serif;
   --sans: 'Karla', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -24,7 +26,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--sans);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   line-height: 1.75;
   color: var(--ink);
   background: var(--cream);
@@ -35,52 +37,70 @@ a { color: inherit; text-decoration: none; }
 
 img { max-width: 100%; display: block; }
 
+em { font-style: italic; }
+
 /* ---------- header ---------- */
 
-.site-header {
-  padding: 3.5rem 1.5rem 0;
-  text-align: center;
+.site-header { text-align: center; }
+
+/* thin announcement-style strip across the very top */
+.tagline {
+  background: var(--blush);
+  color: var(--rose-deep);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  padding: 0.6rem 1rem;
 }
 
 .brand {
   font-family: var(--serif);
-  font-size: clamp(2.6rem, 6vw, 4rem);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1.1;
+  font-optical-sizing: auto;
+  font-size: clamp(2.7rem, 6vw, 4.2rem);
+  font-weight: 550;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  margin-top: 2.6rem;
 }
 
-.brand a:hover { color: var(--gold); }
-
-.tagline {
-  margin-top: 0.6rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: var(--muted);
+.brand em {
+  font-style: italic;
+  font-weight: 480;
+  color: var(--rose-deep);
 }
 
+.brand a:hover { color: var(--rose); }
+
+/* boxed nav cells */
 .main-nav {
-  margin-top: 2rem;
-  padding: 1.1rem 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  margin-top: 2.2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.4rem 2.4rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fffdf8;
 }
 
 .main-nav a {
-  font-size: 0.78rem;
+  flex: 1 1 auto;
+  padding: 0.95rem 1.2rem;
+  border-left: 1px solid var(--line);
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.24em;
   color: var(--ink);
-  transition: color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.main-nav a:hover, .main-nav a.active { color: var(--gold); }
+.main-nav a:first-child { border-left: none; }
+
+.main-nav a:hover, .main-nav a.active {
+  background: var(--blush-light);
+  color: var(--rose-deep);
+}
 
 /* ---------- layout ---------- */
 
@@ -96,43 +116,73 @@ img { max-width: 100%; display: block; }
 
 .hero {
   text-align: center;
-  padding: 5rem 1.5rem 4.5rem;
+  background: var(--blush-light);
+  border-bottom: 1px solid var(--line);
+  padding: 4.5rem 1.5rem 5rem;
+}
+
+.hero-badge {
+  width: 118px;
+  margin: 0 auto 2rem;
 }
 
 .kicker {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--gold);
+  letter-spacing: 0.34em;
+  color: var(--rose-deep);
 }
+
+.kicker::before, .kicker::after { content: '\2661'; margin: 0 0.9rem; color: var(--rose); }
 
 .hero h1 {
   font-family: var(--serif);
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  font-weight: 600;
-  line-height: 1.15;
-  max-width: 22ch;
-  margin: 1.2rem auto 0;
+  font-optical-sizing: auto;
+  font-size: clamp(2.4rem, 5.5vw, 3.9rem);
+  font-weight: 520;
+  line-height: 1.08;
+  letter-spacing: 0.005em;
+  max-width: 20ch;
+  margin: 1.4rem auto 0;
 }
 
-.hero h1 a:hover { color: var(--gold); }
+.hero h1 a:hover { color: var(--rose-deep); }
 
 .hero .hero-sub {
-  max-width: 52ch;
-  margin: 1.4rem auto 0;
+  max-width: 50ch;
+  margin: 1.5rem auto 0;
   color: var(--muted);
 }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.85rem 2.4rem;
+  border: 1px solid var(--rose);
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: var(--rose-deep);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover { background: var(--rose); color: #fffdf8; }
 
 /* ---------- section labels ---------- */
 
 .section-label {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--muted);
+  letter-spacing: 0.32em;
+  color: var(--rose-deep);
   margin: 4rem 0 2.5rem;
   display: flex;
   align-items: center;
@@ -161,6 +211,8 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--blush);
+  border: 1px solid var(--line);
+  padding: 10px;
   margin-bottom: 1.4rem;
 }
 
@@ -180,33 +232,37 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--blush) 0%, var(--gold-soft) 100%);
+  background:
+    repeating-linear-gradient(90deg, var(--blush-light) 0 9px, var(--blush) 9px 11px);
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.3rem;
-  color: var(--gold);
+  font-size: 1.25rem;
+  color: var(--rose-deep);
 }
 
 .post-tag {
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--gold);
+  letter-spacing: 0.28em;
+  color: var(--rose-deep);
 }
+
+.post-tag::before { content: '\2661\00a0\00a0'; color: var(--rose); }
 
 .post-title {
   font-family: var(--serif);
-  font-size: 1.55rem;
-  font-weight: 600;
-  line-height: 1.25;
+  font-optical-sizing: auto;
+  font-size: 1.6rem;
+  font-weight: 540;
+  line-height: 1.2;
   margin-top: 0.6rem;
 }
 
-.post-title a:hover { color: var(--gold); }
+.post-title a:hover { color: var(--rose-deep); }
 
 .post-excerpt {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   color: var(--muted);
   margin-top: 0.6rem;
   max-width: 38ch;
@@ -215,39 +271,55 @@ img { max-width: 100%; display: block; }
 }
 
 .post-meta {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--muted);
   margin-top: 0.7rem;
-  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
-/* ---------- pillar band ---------- */
+/* ---------- pillar band (pinstripes + white card) ---------- */
 
 .pillars {
-  background: var(--blush);
-  padding: 4rem 1.5rem;
-  margin-top: 4rem;
+  background: repeating-linear-gradient(90deg, var(--cream) 0 10px, var(--blush) 10px 12px);
+  padding: 4.5rem 1.5rem;
+  margin-top: 4.5rem;
+}
+
+.pillar-card {
+  max-width: 1040px;
+  margin: 0 auto;
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  padding: 3.5rem 2.5rem 3rem;
+}
+
+.pillar-heading {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-size: 2.2rem;
+  font-weight: 520;
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
 .pillar-grid {
-  max-width: 1080px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2.5rem;
   text-align: center;
 }
 
 .pillar h3 {
   font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.45rem;
+  font-weight: 550;
 }
 
-.pillar h3 a:hover { color: var(--gold); }
+.pillar h3 a:hover { color: var(--rose-deep); }
 
 .pillar p {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--muted);
   margin-top: 0.5rem;
 }
@@ -255,32 +327,31 @@ img { max-width: 100%; display: block; }
 .pillar .pillar-icon {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.1rem;
-  color: var(--gold);
+  font-size: 1.05rem;
+  color: var(--rose);
   margin-bottom: 0.4rem;
 }
 
 /* ---------- article pages ---------- */
 
-.article {
-  padding: 4.5rem 0 3rem;
-}
+.article { padding: 4.5rem 0 3rem; }
 
 .article-header { text-align: center; margin-bottom: 3rem; }
 
 .article-header h1 {
   font-family: var(--serif);
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 600;
-  line-height: 1.15;
-  max-width: 24ch;
-  margin: 1.2rem auto 0;
+  font-optical-sizing: auto;
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  font-weight: 520;
+  line-height: 1.1;
+  max-width: 22ch;
+  margin: 1.2rem auto 0.8rem;
 }
 
 .article-body h2 {
   font-family: var(--serif);
   font-size: 1.9rem;
-  font-weight: 600;
+  font-weight: 540;
   margin: 2.5rem 0 1rem;
 }
 
@@ -293,34 +364,42 @@ img { max-width: 100%; display: block; }
 .article-body blockquote {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.35rem;
-  line-height: 1.5;
-  color: var(--gold);
-  border-left: 2px solid var(--gold-soft);
-  padding-left: 1.5rem;
-  margin: 2rem 0;
+  font-size: 1.4rem;
+  font-weight: 480;
+  line-height: 1.45;
+  color: var(--rose-deep);
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  margin: 2.4rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .article-body .article-img {
   margin: 2.5rem 0;
   background: var(--blush);
+  border: 1px solid var(--line);
+  padding: 10px;
 }
 
 .article-body .article-img .img-placeholder { aspect-ratio: 3 / 2; }
 
 .article-body figcaption {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--muted);
   text-align: center;
-  padding-top: 0.6rem;
+  padding-top: 0.7rem;
+  font-style: italic;
 }
 
 .disclaimer {
   margin-top: 3rem;
   padding: 1.2rem 1.5rem;
-  background: var(--blush);
+  background: var(--blush-light);
+  border: 1px solid var(--line);
   font-size: 0.85rem;
   color: var(--muted);
+  text-align: center;
 }
 
 /* ---------- page intro (about, category pages) ---------- */
@@ -332,8 +411,9 @@ img { max-width: 100%; display: block; }
 
 .page-intro h1 {
   font-family: var(--serif);
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 600;
+  font-optical-sizing: auto;
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  font-weight: 520;
 }
 
 .page-intro p {
@@ -346,16 +426,26 @@ img { max-width: 100%; display: block; }
 
 footer {
   margin-top: 5rem;
-  padding: 3rem 1.5rem 3.5rem;
-  border-top: 1px solid var(--line);
+  padding: 0;
   text-align: center;
 }
 
+.footer-inner {
+  border-top: 1px solid var(--line);
+  background: var(--blush-light);
+  padding: 3.2rem 1.5rem 3.5rem;
+}
+
+/* fallback if footer HTML has no inner wrapper */
+footer > .footer-brand { margin-top: 3rem; }
+
 .footer-brand {
   font-family: var(--serif);
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 540;
 }
+
+.footer-brand em { font-style: italic; color: var(--rose-deep); }
 
 .footer-nav {
   list-style: none;
@@ -364,23 +454,28 @@ footer {
   justify-content: center;
   gap: 0.4rem 2rem;
   margin: 1.4rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .footer-nav a {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
 }
 
-.footer-nav a:hover { color: var(--gold); }
+.footer-nav a:hover { color: var(--rose-deep); }
 
 footer .copyright {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--muted);
+  letter-spacing: 0.06em;
 }
 
-@media (max-width: 600px) {
-  .main-nav { gap: 0.3rem 1.4rem; }
-  .hero { padding: 3.5rem 1.5rem 3rem; }
+@media (max-width: 640px) {
+  .main-nav a { flex: 1 1 33%; border-top: 1px solid var(--line); margin-top: -1px; }
+  .hero { padding: 3.5rem 1.5rem 3.5rem; }
+  .kicker::before, .kicker::after { margin: 0 0.5rem; }
 }
