@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if title %}{{ title }} &mdash; {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <p class="tagline">{{ site.tagline }}</p>
+
+    <div class="photo-header{% if page.url == '/' %} photo-header-tall{% endif %}">
+      <img class="header-badge" src="/assets/badge.svg" alt="{{ site.name }}" />
+    </div>
+
+    <nav class="main-nav">
+      <a href="/food/"{% if page.url.startsWith('/food/') %} class="active"{% endif %}>Food</a>
+      <a href="/movement/"{% if page.url.startsWith('/movement/') %} class="active"{% endif %}>Movement</a>
+      <a href="/thoughts/"{% if page.url.startsWith('/thoughts/') %} class="active"{% endif %}>Thoughts</a>
+      <a href="/deep-dive/"{% if page.url.startsWith('/deep-dive/') %} class="active"{% endif %}>The Deep Dive</a>
+      <a href="/favorites/"{% if page.url.startsWith('/favorites/') %} class="active"{% endif %}>Favorites</a>
+      <a href="/about/"{% if page.url.startsWith('/about/') %} class="active"{% endif %}>About</a>
+    </nav>
+  </header>
+
+  {{ content | safe }}
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-brand">{{ site.nameHtml | safe }}</p>
+      <ul class="footer-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms &amp; Conditions</a></li>
+        <li><a href="/disclaimer/">Disclaimer</a></li>
+      </ul>
+      <p class="copyright">&copy; 2026 {{ site.name }}. Personal experience, not medical advice.</p>
+    </div>
+  </footer>
+</body>
+</html>

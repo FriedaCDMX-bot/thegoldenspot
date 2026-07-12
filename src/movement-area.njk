@@ -1,0 +1,37 @@
+---
+layout: base.njk
+pagination:
+  data: movementAreas
+  size: 1
+  alias: area
+permalink: "/movement/{{ area.slug }}/"
+eleventyComputed:
+  title: "{{ area.name }}"
+  description: "{{ area.description }}"
+---
+<div class="page-intro">
+  <h1 class="script-title">{{ area.name }}</h1>
+  <p>{{ area.description }}</p>
+</div>
+
+<div class="container">
+  {% set entries = collections.movementEntries | byArea(area.name) %}
+
+  <div class="section-label">Studio &amp; Class Reviews</div>
+  <div class="post-grid">
+    {% for post in entries | byKind("Studio Review") %}
+      {% include "post-card.njk" %}
+    {% else %}
+    <p class="empty-note">No reviews here yet &mdash; coming soon.</p>
+    {% endfor %}
+  </div>
+
+  <div class="section-label">My Routines</div>
+  <div class="post-grid">
+    {% for post in entries | byKind("Routine") %}
+      {% include "post-card.njk" %}
+    {% else %}
+    <p class="empty-note">No routines here yet &mdash; coming soon.</p>
+    {% endfor %}
+  </div>
+</div>

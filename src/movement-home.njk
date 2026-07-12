@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: Movement
+permalink: /movement/
+description: "Yoga, mat pilates, gym, and more — studio reviews and Izzy's personal routines."
+---
+<div class="page-intro">
+  <h1 class="script-title">Movement</h1>
+  <p>Pick your practice &mdash; each one holds my honest studio and class reviews, plus the personal routines I actually use. To feel strong, not to shrink.</p>
+</div>
+
+<div class="container">
+  <div class="tile-grid">
+    {% for area in movementAreas %}
+    <a class="tile" href="/movement/{{ area.slug }}/">
+      <div class="tile-img">
+        <img src="/assets/images/movement-{{ area.slug }}.jpg" alt="{{ area.name }}"
+             onerror="this.style.display='none'" />
+      </div>
+      <span class="tile-label script-title">{{ area.name }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,165 @@
+# Pages CMS configuration — this file defines the friendly editing screens
+# at https://app.pagescms.org (sign in with GitHub, pick this repository).
+
+media:
+  input: src/assets/images
+  output: /assets/images
+
+content:
+  - name: recipes
+    label: "Food (Recipe Book)"
+    type: collection
+    path: src/recipes
+    view:
+      fields: [title, mealType, date]
+    fields:
+      - name: title
+        label: Recipe name
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+      - name: mealType
+        label: Meal
+        type: select
+        options:
+          values: [Breakfast, Lunch, Dinner, Snacks]
+      - name: recipeTags
+        label: Tags
+        type: select
+        options:
+          multiple: true
+          values: [High Protein, Sweet, Quick]
+      - name: excerpt
+        label: One-line description (shown on the card)
+        type: string
+      - name: image
+        label: Photo
+        type: image
+      - name: body
+        label: Recipe
+        type: rich-text
+
+  - name: movement
+    label: Movement
+    type: collection
+    path: src/movement
+    view:
+      fields: [title, area, kind, date]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+      - name: area
+        label: Practice
+        type: select
+        options:
+          values: [Yoga, Mat Pilates, Gym, Other Movement]
+      - name: kind
+        label: Type
+        type: select
+        options:
+          values: [Studio Review, Routine]
+      - name: excerpt
+        label: One-line description (shown on the card)
+        type: string
+      - name: image
+        label: Photo
+        type: image
+      - name: body
+        label: Post
+        type: rich-text
+
+  - name: thoughts
+    label: Thoughts
+    type: collection
+    path: src/thoughts
+    view:
+      fields: [title, date]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+      - name: excerpt
+        label: One-line description (shown on the card)
+        type: string
+      - name: image
+        label: Photo
+        type: image
+      - name: body
+        label: Post
+        type: rich-text
+
+  - name: deep-dives
+    label: The Deep Dive
+    type: collection
+    path: src/deep-dives
+    view:
+      fields: [title, date]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+      - name: excerpt
+        label: One-line description (shown on the card)
+        type: string
+      - name: image
+        label: Photo
+        type: image
+      - name: body
+        label: Article (remember sources at the bottom!)
+        type: rich-text
+
+  - name: favorites
+    label: Favorites
+    type: collection
+    path: src/favorites
+    view:
+      fields: [title, favCategory, date]
+    fields:
+      - name: title
+        label: Item name
+        type: string
+        required: true
+      - name: date
+        label: Date added
+        type: date
+      - name: favCategory
+        label: Category
+        type: select
+        options:
+          values: [Outfits, Products, Wishlist]
+      - name: link
+        label: Link to the item (full URL)
+        type: string
+      - name: image
+        label: Photo
+        type: image
+      - name: note
+        label: One-line note about why you love it
+        type: string
+
+  - name: about
+    label: About page
+    type: file
+    path: src/about/index.md
+    fields:
+      - name: title
+        label: Page heading
+        type: string
+      - name: body
+        label: Page text
+        type: rich-text

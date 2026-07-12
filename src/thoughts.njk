@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Thoughts
+permalink: /thoughts/
+description: "Short and sweet — routines, favorites, and what Izzy's been watching and reading."
+---
+<div class="page-intro">
+  <h1 class="script-title">Thoughts</h1>
+  <p>Short and sweet: my routines, current favorites, what I&rsquo;ve been watching and reading, and little reflections on what&rsquo;s making me feel my best.</p>
+</div>
+
+<div class="container">
+  <div class="post-grid" style="padding-top: 2rem;">
+    {% for post in collections.thoughts %}
+      {% include "post-card.njk" %}
+    {% else %}
+    <p class="empty-note">First thought coming soon.</p>
+    {% endfor %}
+  </div>
+</div>

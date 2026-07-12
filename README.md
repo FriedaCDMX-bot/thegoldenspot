@@ -1,73 +1,70 @@
 # Izzy's Busy
 
 Izzy's Busy — a personal lifestyle blog centered on nutrition, health, and
-wellness for young girls and women. Feel your absolute best, no diet culture
-required.
+wellness for young girls and women. Feel your best.
 
-This is a plain static website (just HTML and CSS, no build step), designed to
-be hosted for free on [Netlify](https://netlify.com).
+Hosted free on [Netlify](https://netlify.com), built with
+[Eleventy](https://www.11ty.dev), and edited without code through
+[Pages CMS](https://app.pagescms.org).
+
+## ✍️ How Izzy publishes (no code!)
+
+1. Go to **app.pagescms.org** and sign in with GitHub.
+2. Pick this repository. The sections appear as friendly editing screens:
+   Food (Recipe Book), Movement, Thoughts, The Deep Dive, Favorites, and the
+   About page.
+3. Click **Add entry**, write in the editor, upload photos with the image
+   button, and hit **Save**. The site republishes itself within a minute or
+   two.
+
+New posts automatically appear on the homepage, their section page, and the
+filters — no other steps.
 
 ## How the site is organized
 
 ```
-index.html            → homepage
-about/                → about page
-blog/                 → "All Posts" page + one folder per post
-food/                 → Food section page
-movement/             → Movement section page
-routines/             → Routines section page
-deep-dive/            → The Deep Dive (long-form column) section page
-assets/styles.css     → all the design (colors, fonts, layout)
-assets/images/        → put your photos here
+src/recipes/          → Food section entries (mealType + tags drive filters)
+src/movement/         → Movement entries (area: Yoga/Mat Pilates/Gym/Other,
+                        kind: Studio Review/Routine)
+src/thoughts/         → Thoughts (short-form posts)
+src/deep-dives/       → The Deep Dive (long-form, sourced articles)
+src/favorites/        → Favorites cards (link out to products; no page)
+src/about/index.md    → About page text
+src/pages/            → Contact, Privacy, Terms, Disclaimer
+src/_includes/        → page layouts (design)
+src/_data/            → site name, tagline, section lists
+src/assets/           → styles, badge/logo, favicon, images
+.pages.yml            → configures the Pages CMS editing screens
 ```
 
-## Publishing a new post
+## Design notes
 
-1. Copy an existing post folder inside `blog/` (e.g. `blog/what-i-eat-in-a-day/`)
-   and rename it to your new post's URL slug, e.g. `blog/my-morning-routine/`.
-2. Edit the `index.html` inside it: title, date, category label, and body text.
-3. Add a card for the post on `blog/index.html` (All Posts), on the matching
-   section page (e.g. `routines/index.html`), and — if it's your newest post —
-   update the hero and Recent Posts on the homepage `index.html`.
-4. Commit and push (or edit directly on GitHub). Netlify republishes
-   automatically within a minute or two.
+- The header photo band uses `src/assets/images/header.jpg` if it exists
+  (add one for the Lovebirdie-style photo backdrop); otherwise it shows the
+  pinstripe pattern.
+- The Movement tiles look for `src/assets/images/movement-yoga.jpg`,
+  `movement-mat-pilates.jpg`, `movement-gym.jpg`, `movement-other.jpg`.
+- The logo is `src/assets/badge.svg` — replace it with your own design
+  anytime (a transparent-background PNG named `badge.png` works too, just
+  update the two references in `src/_includes/base.njk` and `src/index.njk`).
+- Design changes (colors, fonts, layout) live in `src/assets/styles.css` —
+  ask Claude for these.
 
-### Adding photos
+## Running it locally (optional)
 
-Save photos into `assets/images/`, then replace a placeholder block:
-
-```html
-<div class="img-placeholder">add a photo</div>
+```
+npm install
+npm start        # live-reloading preview at localhost:8080
 ```
 
-with a real image:
-
-```html
-<img src="/assets/images/your-photo.jpg" alt="describe the photo" />
-```
-
-Tip: resize photos to ~1600px wide before uploading so pages load fast.
-
-## Changing the blog's name later (it's easy)
-
-The name appears only as text — nothing structural depends on it:
-
-- **Site text:** find-and-replace "Izzy's Busy" across the HTML files
-  (a few minutes, and Claude can do it on request).
-- **Netlify URL:** free to change anytime — Site configuration → Site details →
-  Change site name.
-- **GitHub repo name:** free to rename (the repo is still called `thegoldenspot`;
-  renaming it to `izzysbusy` is optional and cosmetic) — Settings → General →
-  Rename. GitHub redirects the old name automatically.
-- **Custom domain:** the only thing that costs money (~$10–20/yr per domain).
-  Buying can be deferred until the name feels settled.
+Netlify builds automatically from `netlify.toml` (`npm run build` → `_site`).
 
 ## House rules (editorial guardrails)
 
 - No calorie counts, weight-loss framing, or before/after content.
 - Deep Dive posts cite real sources.
-- Every post keeps the standing disclaimer: personal experience + student
-  research, not medical advice.
+- Personal experience disclaimers stay on posts (they're built into the
+  layouts).
 - Keep last names, school names, and exact locations off the site.
 
 See `BRAND_STRATEGY.md` for the full voice, audience, and content strategy.

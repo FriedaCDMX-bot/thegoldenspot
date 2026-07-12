@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "food",
+    "name": "Food",
+    "numeral": "i.",
+    "description": "My recipe book — real meals I make and love, with photos and honest notes."
+  },
+  {
+    "slug": "movement",
+    "name": "Movement",
+    "numeral": "ii.",
+    "description": "Yoga, mat pilates, and the gym — studio reviews and my personal routines."
+  },
+  {
+    "slug": "thoughts",
+    "name": "Thoughts",
+    "numeral": "iii.",
+    "description": "Short and sweet: routines, favorites, what I've been watching and reading."
+  },
+  {
+    "slug": "deep-dive",
+    "name": "The Deep Dive",
+    "numeral": "iv.",
+    "description": "Occasional longer, evidence-based reads: nutrition science and myth-busting."
+  },
+  {
+    "slug": "favorites",
+    "name": "Favorites",
+    "numeral": "v.",
+    "description": "Products, outfits, and wishlist finds I'm loving right now."
+  }
+]

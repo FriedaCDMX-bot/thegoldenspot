@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+<div class="container narrow">
+  <article class="article">
+    <div class="article-header">
+      <p class="kicker">{{ mealType }}</p>
+      <h1 class="script-title">{{ title }}</h1>
+      <div class="chip-row chip-row-static">
+        {% for tag in recipeTags %}<span class="chip chip-label">{{ tag }}</span>{% endfor %}
+      </div>
+    </div>
+
+    <div class="article-body">
+      {% if image %}
+      <figure class="article-img"><img src="{{ image }}" alt="{{ title }}" /></figure>
+      {% else %}
+      <figure class="article-img"><div class="img-placeholder">add a photo of this meal</div></figure>
+      {% endif %}
+      {{ content | safe }}
+      <div class="disclaimer">Shared as personal inspiration, not a meal plan. Everyone&rsquo;s needs are different &mdash; that&rsquo;s the golden spot.</div>
+    </div>
+  </article>
+</div>

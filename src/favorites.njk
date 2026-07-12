@@ -1,0 +1,63 @@
+---
+layout: base.njk
+title: Favorites
+permalink: /favorites/
+description: "Izzy's favorite products, outfits, and current wishlist."
+---
+<div class="page-intro">
+  <h1 class="script-title">Favorites</h1>
+  <p>Things I&rsquo;m loving right now &mdash; favorite products, outfit pieces, and my current wishlist. Links go straight to the item.</p>
+</div>
+
+<div class="container">
+  <div class="chip-row" id="fav-filters">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="Outfits">Outfits</button>
+    <button class="chip" data-filter="Products">Products</button>
+    <button class="chip" data-filter="Wishlist">Wishlist</button>
+  </div>
+
+  <div class="post-grid" id="fav-grid" style="padding-top: 2.5rem;">
+    {% for item in collections.favorites %}
+    <article class="post-card" data-tags="{{ item.data.favCategory }}">
+      <a href="{{ item.data.link }}" target="_blank" rel="noopener">
+        <div class="post-card-img">
+          {% if item.data.image %}
+          <img src="{{ item.data.image }}" alt="{{ item.data.title }}" />
+          {% else %}
+          <div class="img-placeholder">add a photo</div>
+          {% endif %}
+        </div>
+        <div class="post-tag">{{ item.data.favCategory }}</div>
+        <div class="post-title">{{ item.data.title }} &#8599;</div>
+        {% if item.data.note %}<p class="post-excerpt">{{ item.data.note }}</p>{% endif %}
+      </a>
+    </article>
+    {% else %}
+    <p class="empty-note">First favorites coming soon.</p>
+    {% endfor %}
+  </div>
+  <p class="empty-note" id="fav-empty" hidden>Nothing in this category yet &mdash; check back soon!</p>
+</div>
+
+<script>
+  (function () {
+    var chips = document.querySelectorAll('#fav-filters .chip');
+    var cards = document.querySelectorAll('#fav-grid .post-card');
+    var empty = document.getElementById('fav-empty');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        var f = chip.dataset.filter;
+        var shown = 0;
+        cards.forEach(function (card) {
+          var show = f === 'all' || card.dataset.tags === f;
+          card.style.display = show ? '' : 'none';
+          if (show) shown++;
+        });
+        empty.hidden = shown > 0;
+      });
+    });
+  })();
+</script>

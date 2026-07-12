@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: Food
+permalink: /food/
+description: "Izzy's recipe book — real meals with photos, recipes, and honest notes."
+---
+<div class="page-intro">
+  <h1 class="script-title">The Recipe Book</h1>
+  <p>Real meals I make and love &mdash; photos, recipes, and honest notes. No rules, no diet culture.</p>
+</div>
+
+<div class="container">
+  <div class="chip-row" id="recipe-filters">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="Breakfast">Breakfast</button>
+    <button class="chip" data-filter="Lunch">Lunch</button>
+    <button class="chip" data-filter="Dinner">Dinner</button>
+    <button class="chip" data-filter="Snacks">Snacks</button>
+    <button class="chip" data-filter="High Protein">High Protein</button>
+    <button class="chip" data-filter="Sweet">Sweet</button>
+    <button class="chip" data-filter="Quick">Quick</button>
+  </div>
+
+  <div class="post-grid" id="recipe-grid" style="padding-top: 2.5rem;">
+    {% for post in collections.recipes %}
+    <article class="post-card" data-tags="{{ post.data.mealType }}|{{ post.data.recipeTags | join('|') }}">
+      <a href="{{ post.url }}">
+        <div class="post-card-img">
+          {% if post.data.image %}
+          <img src="{{ post.data.image }}" alt="{{ post.data.title }}" />
+          {% else %}
+          <div class="img-placeholder">add a photo</div>
+          {% endif %}
+        </div>
+        <div class="post-tag">{{ post.data.mealType }}</div>
+        <div class="post-title">{{ post.data.title }}</div>
+        {% if post.data.excerpt %}<p class="post-excerpt">{{ post.data.excerpt }}</p>{% endif %}
+      </a>
+    </article>
+    {% else %}
+    <p class="empty-note">First recipe coming soon.</p>
+    {% endfor %}
+  </div>
+  <p class="empty-note" id="recipe-empty" hidden>Nothing in this category yet &mdash; check back soon!</p>
+</div>
+
+<script>
+  (function () {
+    var chips = document.querySelectorAll('#recipe-filters .chip');
+    var cards = document.querySelectorAll('#recipe-grid .post-card');
+    var empty = document.getElementById('recipe-empty');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        var f = chip.dataset.filter;
+        var shown = 0;
+        cards.forEach(function (card) {
+          var show = f === 'all' || (card.dataset.tags || '').split('|').indexOf(f) !== -1;
+          card.style.display = show ? '' : 'none';
+          if (show) shown++;
+        });
+        empty.hidden = shown > 0;
+      });
+    });
+  })();
+</script>

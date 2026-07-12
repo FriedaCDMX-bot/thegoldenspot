@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: The Deep Dive
+permalink: /deep-dive/
+description: "Longer, evidence-based reads — nutrition science explained simply, and wellness trends myth-busted, with sources."
+---
+<div class="page-intro">
+  <h1 class="script-title">The Deep Dive</h1>
+  <p>Occasional longer, evidence-based reads: nutrition science explained simply, and current wellness trends myth-busted &mdash; always with sources.</p>
+</div>
+
+<div class="container">
+  <div class="post-grid" style="padding-top: 2rem;">
+    {% for post in collections.deepDives %}
+      {% include "post-card.njk" %}
+    {% else %}
+    <p class="empty-note">First Deep Dive coming soon.</p>
+    {% endfor %}
+  </div>
+</div>

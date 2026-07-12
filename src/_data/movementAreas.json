@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "yoga",
+    "name": "Yoga",
+    "description": "Studio reviews and flows I keep coming back to."
+  },
+  {
+    "slug": "mat-pilates",
+    "name": "Mat Pilates",
+    "description": "Class reviews and mat routines that make me feel strong."
+  },
+  {
+    "slug": "gym",
+    "name": "Gym",
+    "description": "Weightlifting days, split ideas, and my go-to routines."
+  },
+  {
+    "slug": "other",
+    "name": "Other Movement",
+    "description": "Walks, swims, dance — everything else that keeps me moving."
+  }
+]

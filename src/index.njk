@@ -1,0 +1,35 @@
+---
+layout: base.njk
+permalink: /
+---
+{% set latest = collections.postsDesc[0] %}
+<section class="hero">
+  <p class="kicker">Latest</p>
+  <h1 class="script-title"><a href="{{ latest.url }}">{{ latest.data.title }}</a></h1>
+  {% if latest.data.excerpt %}<p class="hero-sub">{{ latest.data.excerpt }}</p>{% endif %}
+  <a class="btn" href="{{ latest.url }}">Take a look</a>
+</section>
+
+<div class="container">
+  <div class="section-label">Recent Posts</div>
+  <div class="post-grid">
+    {% for post in collections.postsDesc.slice(0, 6) %}
+      {% include "post-card.njk" %}
+    {% endfor %}
+  </div>
+</div>
+
+<section class="pillars">
+  <div class="pillar-card">
+    <h2 class="pillar-heading script-title">Explore the blog</h2>
+    <div class="pillar-grid">
+      {% for s in sections %}
+      <div class="pillar">
+        <p class="pillar-icon">{{ s.numeral }}</p>
+        <h3><a href="/{{ s.slug }}/">{{ s.name }}</a></h3>
+        <p>{{ s.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

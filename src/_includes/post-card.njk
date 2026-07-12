@@ -1,0 +1,15 @@
+<article class="post-card">
+  <a href="{{ post.url }}">
+    <div class="post-card-img">
+      {% if post.data.image %}
+      <img src="{{ post.data.image }}" alt="{{ post.data.title }}" />
+      {% else %}
+      <div class="img-placeholder">izzy&rsquo;s busy</div>
+      {% endif %}
+    </div>
+    <div class="post-tag">{{ post.data.mealType or post.data.area or post.data.section }}</div>
+    <div class="post-title">{{ post.data.title }}</div>
+    {% if post.data.excerpt %}<p class="post-excerpt">{{ post.data.excerpt }}</p>{% endif %}
+    <div class="post-meta">{{ post.date | readableDate }}</div>
+  </a>
+</article>

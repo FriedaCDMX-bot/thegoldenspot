@@ -1,0 +1,5 @@
+{
+  "layout": "post.njk",
+  "section": "The Deep Dive",
+  "permalink": "/deep-dive/{{ page.fileSlug }}/"
+}
