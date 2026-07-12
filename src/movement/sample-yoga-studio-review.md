@@ -1,7 +1,7 @@
 ---
 title: "Studio Review: My Favorite Saturday Yoga Class"
 date: 2026-07-07
-area: Yoga
+area: Mind-Body
 kind: Studio Review
 excerpt: An honest review — the vibe, the teachers, the price, and who I'd recommend it for.
 ---

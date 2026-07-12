@@ -16,14 +16,11 @@ description: "Izzy's recipe book — real meals with photos, recipes, and honest
     <button class="chip" data-filter="Lunch">Lunch</button>
     <button class="chip" data-filter="Dinner">Dinner</button>
     <button class="chip" data-filter="Snacks">Snacks</button>
-    <button class="chip" data-filter="High Protein">High Protein</button>
-    <button class="chip" data-filter="Sweet">Sweet</button>
-    <button class="chip" data-filter="Quick">Quick</button>
   </div>
 
   <div class="post-grid" id="recipe-grid" style="padding-top: 2.5rem;">
     {% for post in collections.recipes %}
-    <article class="post-card" data-tags="{{ post.data.mealType }}|{{ post.data.recipeTags | join('|') }}">
+    <article class="post-card" data-tags="{{ post.data.mealType }}">
       <a href="{{ post.url }}">
         <div class="post-card-img">
           {% if post.data.image %}

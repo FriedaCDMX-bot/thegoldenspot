@@ -2,9 +2,6 @@
 title: Berry Yogurt Protein Bowl
 date: 2026-07-11
 mealType: Breakfast
-recipeTags:
-  - High Protein
-  - Quick
 excerpt: My go-to five-minute breakfast — creamy, sweet, and it keeps me full through morning classes.
 ---
 <!-- PLACEHOLDER RECIPE: this shows the recipe format. Replace with a real

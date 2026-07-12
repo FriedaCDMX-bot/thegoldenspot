@@ -23,8 +23,8 @@ filters — no other steps.
 ## How the site is organized
 
 ```
-src/recipes/          → Food section entries (mealType + tags drive filters)
-src/movement/         → Movement entries (area: Yoga/Mat Pilates/Gym/Other,
+src/recipes/          → Food section entries (mealType drives the filters)
+src/movement/         → Movement entries (area: Mind-Body/Strength,
                         kind: Studio Review/Routine)
 src/thoughts/         → Thoughts (short-form posts)
 src/deep-dives/       → The Deep Dive (long-form, sourced articles)
@@ -42,8 +42,8 @@ src/assets/           → styles, badge/logo, favicon, images
 - The header photo band uses `src/assets/images/header.jpg` if it exists
   (add one for the Lovebirdie-style photo backdrop); otherwise it shows the
   pinstripe pattern.
-- The Movement tiles look for `src/assets/images/movement-yoga.jpg`,
-  `movement-mat-pilates.jpg`, `movement-gym.jpg`, `movement-other.jpg`.
+- The Movement tiles look for `src/assets/images/movement-mind-body.jpg`
+  and `movement-strength.jpg`.
 - The logo is `src/assets/badge.svg` — replace it with your own design
   anytime (a transparent-background PNG named `badge.png` works too, just
   update the two references in `src/_includes/base.njk` and `src/index.njk`).

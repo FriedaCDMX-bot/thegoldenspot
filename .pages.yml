@@ -25,12 +25,6 @@ content:
         type: select
         options:
           values: [Breakfast, Lunch, Dinner, Snacks]
-      - name: recipeTags
-        label: Tags
-        type: select
-        options:
-          multiple: true
-          values: [High Protein, Sweet, Quick]
       - name: excerpt
         label: One-line description (shown on the card)
         type: string
@@ -59,7 +53,7 @@ content:
         label: Practice
         type: select
         options:
-          values: [Yoga, Mat Pilates, Gym, Other Movement]
+          values: [Mind-Body, Strength]
       - name: kind
         label: Type
         type: select

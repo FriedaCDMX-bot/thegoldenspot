@@ -13,10 +13,13 @@
     <p class="tagline">{{ site.tagline }}</p>
 
     <div class="photo-header{% if page.url == '/' %} photo-header-tall{% endif %}">
-      <img class="header-badge" src="/assets/badge.svg" alt="{{ site.name }}" />
+      <a href="/" aria-label="Back to the home page">
+        <img class="header-badge" src="/assets/badge.svg" alt="{{ site.name }}" />
+      </a>
     </div>
 
     <nav class="main-nav">
+      <a href="/"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
       <a href="/food/"{% if page.url.startsWith('/food/') %} class="active"{% endif %}>Food</a>
       <a href="/movement/"{% if page.url.startsWith('/movement/') %} class="active"{% endif %}>Movement</a>
       <a href="/thoughts/"{% if page.url.startsWith('/thoughts/') %} class="active"{% endif %}>Thoughts</a>

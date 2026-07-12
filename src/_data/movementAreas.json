@@ -1,22 +1,12 @@
 [
   {
-    "slug": "yoga",
-    "name": "Yoga",
-    "description": "Studio reviews and flows I keep coming back to."
+    "slug": "mind-body",
+    "name": "Mind-Body",
+    "description": "Yoga, mat pilates, and everything slow and centering — class reviews and the flows I keep coming back to."
   },
   {
-    "slug": "mat-pilates",
-    "name": "Mat Pilates",
-    "description": "Class reviews and mat routines that make me feel strong."
-  },
-  {
-    "slug": "gym",
-    "name": "Gym",
-    "description": "Weightlifting days, split ideas, and my go-to routines."
-  },
-  {
-    "slug": "other",
-    "name": "Other Movement",
-    "description": "Walks, swims, dance — everything else that keeps me moving."
+    "slug": "strength",
+    "name": "Strength",
+    "description": "Weightlifting and gym days — my personal routines, built to feel strong."
   }
 ]

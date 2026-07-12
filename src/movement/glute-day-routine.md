@@ -1,7 +1,7 @@
 ---
 title: My Glute Day Routine
 date: 2026-07-08
-area: Gym
+area: Strength
 kind: Routine
 excerpt: The exact routine I use on lower-body days — simple, strong, and repeatable.
 ---
