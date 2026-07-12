@@ -18,7 +18,11 @@ it handles your information:
 - **Outbound links:** posts sometimes link to other websites (recipes, shops,
   studios). Those sites have their own privacy practices, which this blog
   doesn't control.
-- **Analytics:** none are installed at this time. If analytics are ever
-  added, this policy will be updated to say what is measured and why.
+- **Analytics:** this site uses [GoatCounter](https://www.goatcounter.com),
+  a privacy-friendly counter, to see how many people visit and which pages
+  they read. It does not use cookies, does not track you across sites, and
+  does not collect personal information beyond standard technical data (like
+  a shortened version of your browser type and the page you visited). See
+  GoatCounter's own privacy policy for details.
 
 Questions about privacy on this site? See the [contact page](/contact/).
