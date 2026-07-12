@@ -1,11 +1,9 @@
 ---
-title: What Intuitive Eating Actually Is (and Isn't)
+title: what is intuitive eating to me, and what can it be for you?
 date: 2026-07-09
 excerpt: A longer, sourced look at the framework behind this whole blog.
 ---
-<!-- PLACEHOLDER: the template for your Deep Dive column. Keep this structure
-for every Deep Dive: why this topic → what it is → what it isn't (myths) →
-what the research says (with sources!) → your honest takeaway. -->
+
 
 Start with why you chose this topic: intuitive eating is the framework this
 whole blog is built on, so it deserves the first Deep Dive.
@@ -37,3 +35,4 @@ in a student's life.
 
 - List every source you used, with links.
 - Prefer peer-reviewed studies, registered dietitians, and reputable health organizations.
+
