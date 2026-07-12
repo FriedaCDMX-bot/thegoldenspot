@@ -16,7 +16,7 @@ think for most people. What does work is learning what makes *you* feel your
 best — eating intuitively instead of by rules, moving your body to feel fit
 and strong, sleeping enough, and living by your own values.
 
-> I call it the golden spot — and finding yours is what this blog is about.
+> Finding what makes you feel your best — and it's different for everyone — is what this blog is about.
 
 Thanks for being here at the very beginning. I hope this becomes a place you
 come back to when you need inspiration — or just a reminder that feeling good

@@ -15,7 +15,8 @@ layout: base.njk
       <figure class="article-img"><div class="img-placeholder">add a photo of this meal</div></figure>
       {% endif %}
       {{ content | safe }}
-      <div class="disclaimer">Shared as personal inspiration, not a meal plan. Everyone&rsquo;s needs are different &mdash; that&rsquo;s the golden spot.</div>
+      <div class="disclaimer">Shared as personal inspiration, not a meal plan. Everyone&rsquo;s needs are different &mdash; find what feels best for you.</div>
     </div>
+    {% include "comments.njk" %}
   </article>
 </div>

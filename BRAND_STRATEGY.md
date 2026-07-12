@@ -18,7 +18,7 @@ the reader's stage of life.
 - Against diet culture: it isn't a sustainable or healthy lifestyle for most people.
 - For whatever makes *you* feel your best: intuitive eating, exercising to feel fit
   and strong (not to shrink), sleep, living by your values.
-- Everyone's "golden spot" is unique — the blog helps readers find theirs, it doesn't
+- Everyone's ideal balance is unique — the blog helps readers find theirs, it doesn't
   prescribe one.
 
 ## Voice
@@ -73,6 +73,5 @@ demonstrate rigor and responsibility, not just enthusiasm.
 
 ## Name
 
-**Izzy's Busy** (chosen July 2026; previously launched under the working title
-"The Golden Spot"). "The golden spot" survives as the blog's signature phrase
-for its core philosophy — everyone's unique feel-your-best combination.
+**Izzy's Busy** (chosen July 2026). Core philosophy: everyone's unique
+feel-your-best combination is different, and that's the whole point.
