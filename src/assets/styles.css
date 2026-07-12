@@ -400,10 +400,15 @@ em { font-style: italic; }
 }
 
 .pillar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem 2.5rem;
   text-align: center;
+}
+
+.pillar {
+  flex: 0 1 170px;
 }
 
 .pillar h3 {
