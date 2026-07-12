@@ -1,12 +1,10 @@
 ---
-title: Why I'm Starting This Blog
+title: why i'm starting this blog
 date: 2026-07-10
 excerpt: A little about me, what I believe about feeling your best, and what
   you'll find here.
 image: /assets/images/about me.jpg
 ---
-
-
 If you've ever scrolled through wellness content and felt like it was either
 written for someone twice your age or trying to sell you a set of food rules,
 this blog is for you. I'm a student, and I'm writing this from the middle of
