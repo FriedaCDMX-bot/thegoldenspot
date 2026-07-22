@@ -47,8 +47,11 @@ src/assets/           → styles, badge/logo, favicon, images
 - The logo is `src/assets/badge.svg` — replace it with your own design
   anytime (a transparent-background PNG named `badge.png` works too, just
   update the two references in `src/_includes/base.njk` and `src/index.njk`).
-- Design changes (colors, fonts, layout) live in `src/assets/styles.css` —
-  ask Claude for these.
+- Everyday design changes are self-serve: the **🎨 Theme & Design** screen
+  in Pages CMS controls the tagline, accent color, stripe color, and title
+  font from dropdowns (stored in `src/_data/theme.json`). No code needed.
+- Deeper design changes (layout, spacing, new colors beyond the presets,
+  new fonts) live in `src/assets/styles.css` — ask Claude for these.
 
 ## Running it locally (optional)
 

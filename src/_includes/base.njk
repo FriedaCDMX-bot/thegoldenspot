@@ -7,10 +7,44 @@
   <meta name="description" content="{{ description or site.description }}" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="stylesheet" href="/assets/styles.css" />
+
+  {# ---- Theme: turns the simple dropdown choices in theme.json into design ---- #}
+  {% set accentMap = {
+    "sage": "#74814f", "blue": "#5a6f9e", "pink": "#c9808f",
+    "terracotta": "#a2573f", "lavender": "#8a6fae", "charcoal": "#403d30"
+  } %}
+  {% set stripeMap = {
+    "pink": "#f0c8d0", "blue": "#94a8d2", "sage": "#cfdbb2",
+    "lavender": "#c9bce0", "cream": "#e6dcc4", "none": "#ffffff"
+  } %}
+  {% set fontMap = {
+    "script": "'Great Vibes', cursive",
+    "flowing": "'Dancing Script', cursive",
+    "elegant-serif": "'Playfair Display', Georgia, serif",
+    "modern-serif": "'Fraunces', Georgia, serif"
+  } %}
+  <style>
+    :root {
+      --accent-theme: {{ accentMap[theme.accent] or accentMap.sage }};
+      --stripe-theme: {{ stripeMap[theme.stripes] or stripeMap.pink }};
+      --script: {{ fontMap[theme.titleFont] or fontMap.script }};
+    }
+    /* accent-driven elements follow the chosen accent color */
+    .btn { background: var(--accent-theme); border-color: var(--accent-theme); }
+    .chip.active { background: var(--accent-theme); border-color: var(--accent-theme); }
+    .main-nav a.active { color: var(--accent-theme); }
+    .kicker, .post-tag, .section-label { color: var(--accent-theme); }
+    .hero h1 a:hover, .post-title a:hover, .post-card a:hover .post-title,
+    .pillar h3 a:hover, .footer-nav a:hover, .article-body h2 { color: var(--accent-theme); }
+    /* stripe-driven pattern color */
+    .photo-header, .pillars, .tile, .img-placeholder {
+      --pink: var(--stripe-theme);
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <p class="tagline">{{ site.tagline }}</p>
+    <p class="tagline">{{ theme.tagline or site.tagline }}</p>
 
     <div class="photo-header{% if page.url == '/' %} photo-header-tall{% endif %}">
       <a href="/" aria-label="Back to the home page">

@@ -6,6 +6,30 @@ media:
   output: /assets/images
 
 content:
+  - name: theme
+    label: "🎨 Theme & Design"
+    type: file
+    path: src/_data/theme.json
+    fields:
+      - name: tagline
+        label: Tagline (the strip across the very top)
+        type: string
+      - name: accent
+        label: Accent color (buttons, links, highlights)
+        type: select
+        options:
+          values: [sage, blue, pink, terracotta, lavender, charcoal]
+      - name: stripes
+        label: Stripe & pattern color
+        type: select
+        options:
+          values: [pink, blue, sage, lavender, cream, none]
+      - name: titleFont
+        label: Title font
+        type: select
+        options:
+          values: [script, flowing, elegant-serif, modern-serif]
+
   - name: recipes
     label: "Food (Recipe Book)"
     type: collection
